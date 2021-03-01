@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            background-color: wheat;
+            font: 16px arial;
+        }
+
+        .game-container {
+            display: flex;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            background-color: gray;
+            align-items: center;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 500px;
+            height: 500px;
+            border: 1px solid black; 
+            box-shadow: 0 0 5px black;
+        }
+
+        .grid-element {
+            border: 1px solid black; 
+            background-color: #FFFFFF;
+            filter: brightness(1.0);
+        }
+
+        .color-solid {
+            background-color: black;
+        }
+
+        #dimensions-button {
+            background-color: rgb(59, 126, 143);
+            margin: 1rem 0 0 0;
+            justify-content: center;
+            height: 32px;
+            width: 75px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            margin: 16px;
+        }
+        input {
+            width: 16px;
+            height: 16px;
+            margin: 16px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Etch-a-sketch</h1>
+    <div class='game-container'>
+        <div class='buttons-container'>
+            <button id='dimensions-button'>16 x 16</button>
+            <radio> 
+                <label value='normal'>Normal</label>
+                <input type='radio' name = 'game-choice' value ='normal' checked>
+                <br>
+
+                <label value='normal'>Rainbow</label>
+                <input type='radio' name = 'game-choice' value ='rainbow'>
+                <br>
+
+                <label value='normal'>Shaded</label>
+                <input type='radio' name = 'game-choice' value ='shaded'>
+            </radio>
+            <button id='reset-button'>Reset</button>
+        </div>
+        <div class='grid-container'></div>
+    </div>
+
+</body>
+</html>
+<script src="etch-a-sketch.js"></script>
