@@ -15,7 +15,7 @@ function drawGrid() {
         switch (DRAW_CHOICE) {
         case "normal":
             cell.addEventListener('mouseover', 
-            e => e.target.classList.add('color-solid'))
+                e => e.target.classList.add('color-solid'))
             break;
 
         case "rainbow":
