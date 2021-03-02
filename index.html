@@ -2,9 +2,19 @@
 
 <head>
     <style>
+        html {
+            height: 100%;
+        } 
+
         body {
-            background-color: wheat;
-            font: 16px arial;
+            height: 100%;
+            margin: 0;
+            font: 16px arial #577cd9;
+            color: #577cd9;;
+            background: rgb(2,0,36);
+            background: linear-gradient(318deg, rgba(2,0,36,1) 0%, rgba(31,31,108,1) 35%, rgba(0,212,255,1) 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .game-container {
@@ -14,8 +24,9 @@
         .buttons-container {
             display: flex;
             flex-direction: column;
-            background-color: gray;
+            background-color: #505050;
             align-items: center;
+            box-shadow: 2px 2px 5px #222;
         }
 
         .grid-container{
@@ -24,7 +35,7 @@
             width: 500px;
             height: 500px;
             border: 1px solid black; 
-            box-shadow: 0 0 5px black;
+            box-shadow: 2px 2px 5px #222;
         }
 
         .grid-element {
@@ -37,26 +48,52 @@
             background-color: black;
         }
 
-        #dimensions-button {
-            background-color: rgb(59, 126, 143);
-            margin: 1rem 0 0 0;
+        .button {
+            background-color: #577cd9;
+            margin: 0.5rem;
             justify-content: center;
             height: 32px;
             width: 75px;
+            color: white;
+            outline: none;
+        }
+
+        #option-button-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+        .option-button {
+            background-color: #3b69df;
+            margin: 0.5rem 1rem;
+            justify-content: center;
+            height: 32px;
+            width: 75px;
+            color: white;
+            border: 0;
+            outline: none;
+        }
+
+        .option-button:hover {
+            transform: scale(1.1);
+        }
+
+        .selected {
+            border: 2px solid white;
+            transform: scale(1.1);
         }
 
         h1 {
-            text-align: center;
+            color: white;
+            margin-left: 14rem;
+            text-shadow: 0 0 0.2rem black;
         }
 
-        label {
-            margin: 16px;
+        #dimensions-button {
+            margin-top: 1rem;
         }
-        input {
-            width: 16px;
-            height: 16px;
-            margin: 16px;
-        }
+
     </style>
 
 </head>
@@ -64,20 +101,13 @@
     <h1>Etch-a-sketch</h1>
     <div class='game-container'>
         <div class='buttons-container'>
-            <button id='dimensions-button'>16 x 16</button>
-            <radio> 
-                <label value='normal'>Normal</label>
-                <input type='radio' name = 'game-choice' value ='normal' checked>
-                <br>
-
-                <label value='normal'>Rainbow</label>
-                <input type='radio' name = 'game-choice' value ='rainbow'>
-                <br>
-
-                <label value='normal'>Shaded</label>
-                <input type='radio' name = 'game-choice' value ='shaded'>
-            </radio>
-            <button id='reset-button'>Reset</button>
+            <button class='button' id='dimensions-button'>16 x 16</button>
+            <button id='reset-button' class='button'>Reset</button>
+            <div id='option-button-container'>
+                <button class='option-button selected' id='normal'>Normal</button>
+                <button class='option-button' id='rainbow'>Rainbow</button>
+                <button class='option-button' id='shaded'>Shaded</button>
+            </div>
         </div>
         <div class='grid-container'></div>
     </div>
